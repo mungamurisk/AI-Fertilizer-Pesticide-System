@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Smart Agriculture</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="container">
+        <h1>🌱 Admin Dashboard</h1>
+        <p>AI Fertilizer & Pesticide Recommendation System</p>
+    </header>
+
+    <main class="container">
+        <section>
+            <h2>Dashboard Overview</h2>
+
+            <button type="button" id="refreshDashboard">
+                Refresh Dashboard
+            </button>
+
+            <p id="dashboardMessage" aria-live="polite">
+                Click Refresh Dashboard to load your statistics.
+            </p>
+
+            <div class="form-grid">
+                <div class="result">
+                    <h3>Total Recommendations</h3>
+                    <p id="totalCount">—</p>
+                </div>
+
+                <div class="result">
+                    <h3>Fertilizer Records</h3>
+                    <p id="fertilizerCount">—</p>
+                </div>
+
+                <div class="result">
+                    <h3>Pesticide Records</h3>
+                    <p id="pesticideCount">—</p>
+                </div>
+
+                <div class="result">
+                    <h3>Different Crops</h3>
+                    <p id="cropCount">—</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Crop Statistics</h2>
+            <div id="cropStatistics">
+                Statistics will appear here.
+            </div>
+        </section>
+
+        <section>
+            <h2>Recent Recommendations</h2>
+            <div style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Crop</th>
+                            <th>Fertilizer</th>
+                            <th>Pesticide</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="recentHistory"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <p><a href="index.html">← Back to Recommendation Website</a></p>
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+</html>
