@@ -9,7 +9,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/pesticides")
-@CrossOrigin(origins = "*")
 public class PesticideController {
 
     private final PesticideService pesticideService;

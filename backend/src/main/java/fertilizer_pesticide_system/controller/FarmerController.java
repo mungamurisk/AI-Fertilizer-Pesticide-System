@@ -2,7 +2,6 @@ package fertilizer_pesticide_system.controller;
 
 import java.util.List;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,7 +15,6 @@ import fertilizer_pesticide_system.service.FarmerService;
 
 @RestController
 @RequestMapping("/api/farmers")
-@CrossOrigin(origins = "*")
 public class FarmerController {
 
     private final FarmerService farmerService;

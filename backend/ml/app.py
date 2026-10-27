@@ -11,8 +11,25 @@ model = joblib.load(Path(__file__).resolve().parent / "fertilizer_ml_model.pkl")
 
 @app.route("/predict", methods=["POST"])
 def predict():
+    data = request.get_json(silent=True)
+    if not isinstance(data, dict):
+        return jsonify({"message": "Request body must be a JSON object."}), 400
 
-    data = request.json
+    required_fields = [
+        "temperature",
+        "humidity",
+        "moisture",
+        "soilType",
+        "cropType",
+        "nitrogen",
+        "potassium",
+        "phosphorus",
+    ]
+    missing_fields = [field for field in required_fields if field not in data]
+    if missing_fields:
+        return jsonify({
+            "message": "Missing required fields: " + ", ".join(missing_fields)
+        }), 400
 
     input_data = pd.DataFrame([
         {
